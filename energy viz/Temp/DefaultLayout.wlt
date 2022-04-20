@@ -400,7 +400,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/UTech/MG-Karting
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/ibuki/energy viz
+  m_LastProjectPath: /Users/ibuki/Documents/GitHub/ball_simulation/energy viz
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:

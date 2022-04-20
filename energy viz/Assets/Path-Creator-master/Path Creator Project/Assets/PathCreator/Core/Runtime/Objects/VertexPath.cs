@@ -82,7 +82,7 @@ namespace PathCreation {
                 times[i] = cumulativeLengthAtEachVertex[i] / length;
 
                 // Calculate normals
-                if (space == PathSpace.xyz) {
+                if (space == PathSpace.xyz | space == PathSpace.xy) {
                     if (i == 0) {
                         localNormals[0] = Vector3.Cross (lastRotationAxis, pathSplitData.tangents[0]).normalized;
                     } else {
@@ -123,7 +123,7 @@ namespace PathCreation {
             }
 
             // Rotate normals to match up with user-defined anchor angles
-            if (space == PathSpace.xyz) {
+            if (space == PathSpace.xyz | space == PathSpace.xy) {
                 for (int anchorIndex = 0; anchorIndex < pathSplitData.anchorVertexMap.Count - 1; anchorIndex++) {
                     int nextAnchorIndex = (isClosedLoop) ? (anchorIndex + 1) % bezierPath.NumSegments : anchorIndex + 1;
 

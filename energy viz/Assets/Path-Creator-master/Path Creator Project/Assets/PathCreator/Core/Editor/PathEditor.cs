@@ -104,7 +104,8 @@ namespace PathCreationEditor {
                 // Path options:
                 data.showPathOptions = EditorGUILayout.Foldout (data.showPathOptions, new GUIContent ("Bézier Path Options"), true, boldFoldoutStyle);
                 if (data.showPathOptions) {
-                    bezierPath.Space = (PathSpace) EditorGUILayout.Popup ("Space", (int) bezierPath.Space, spaceNames);
+                    // bezierPath.Space = (PathSpace) EditorGUILayout.Popup ("Space", (int) bezierPath.Space, spaceNames);
+                    bezierPath.Space = PathSpace.xy;
                     bezierPath.ControlPointMode = (BezierPath.ControlMode) EditorGUILayout.EnumPopup (new GUIContent ("Control Mode"), bezierPath.ControlPointMode);
                     if (bezierPath.ControlPointMode == BezierPath.ControlMode.Automatic) {
                         bezierPath.AutoControlLength = EditorGUILayout.Slider (new GUIContent ("Control Spacing"), bezierPath.AutoControlLength, 0, 1);
@@ -154,7 +155,7 @@ namespace PathCreationEditor {
                             } else if (bezierPath.Space == PathSpace.xz) {
                                 transformPos = new Vector3 (transformPos.x, 0, transformPos.z);
                             } else if (bezierPath.Space == PathSpace.yz) {
-                                transformPos = new Vector3 (transformPos.y, 0, transformPos.z);
+                                transformPos = new Vector3 (0, transformPos.y, transformPos.z);
                             }
                             Vector3 worldCentreToTransform = transformPos - worldCentre;
 
@@ -186,8 +187,9 @@ namespace PathCreationEditor {
                 data.showNormals = EditorGUILayout.Foldout (data.showNormals, new GUIContent ("Normals Options"), true, boldFoldoutStyle);
                 if (data.showNormals) {
                     bezierPath.FlipNormals = EditorGUILayout.Toggle (new GUIContent ("Flip Normals"), bezierPath.FlipNormals);
-                    if (bezierPath.Space == PathSpace.xyz) {
+                    if (bezierPath.Space == PathSpace.xyz | bezierPath.Space == PathSpace.xy) {
                         bezierPath.GlobalNormalsAngle = EditorGUILayout.Slider (new GUIContent ("Global Angle"), bezierPath.GlobalNormalsAngle, 0, 360);
+                        // bezierPath.GlobalNormalsAngle = 90;
 
                         if (GUILayout.Button ("Reset Normals")) {
                             Undo.RecordObject (creator, "Reset Normals");
