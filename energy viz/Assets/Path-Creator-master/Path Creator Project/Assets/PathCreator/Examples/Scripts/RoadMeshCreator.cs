@@ -149,6 +149,7 @@ namespace PathCreation.Examples {
                 mesh = new Mesh ();
             }
             meshFilter.sharedMesh = mesh;
+            meshCollider.sharedMesh = mesh;
         }
 
         void AssignMaterials () {
