@@ -331,6 +331,10 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.InternalAPIEngineBridge.007.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.ProBuilder.AddOns.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.ProBuilder.AssetIdRemapUtility.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.ProBuilder.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aE.dag/Unity.ProBuilder.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.Subsystem.Registration.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
@@ -391,6 +395,8 @@
 "Assets/Path-Creator-master/Path Creator Project/Assets/PathCreator/Examples/Scripts/PathSceneTool.cs"
 "Assets/Path-Creator-master/Path Creator Project/Assets/PathCreator/Examples/Scripts/PathSpawner.cs"
 "Assets/Path-Creator-master/Path Creator Project/Assets/PathCreator/Examples/Scripts/RoadMeshCreator.cs"
+"Assets/startButton.cs"
+"Assets/TrajectoryManager.cs"
 "Assets/TrajectoryRenderer.cs"
 -langversion:9.0
 

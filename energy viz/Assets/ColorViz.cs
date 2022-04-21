@@ -41,25 +41,36 @@ public class ColorViz : MonoBehaviour
         potentialEnergy = -mass*Physics.gravity.y*transform.position.y;
         kineticEnergy = 0.5f*mass*(vel.y*vel.y + vel.x*vel.x);
         totalEnergy = potentialEnergy+kineticEnergy;
-        green = map(potentialEnergy, 0f, totalEnergy, 0f, 1f);
-        blue = map(kineticEnergy, 0f, totalEnergy, 0f, 1f);
-        // txt.text = totalEnergy.ToString();
 
-        newSphereColor = new Color(0f, green, blue, .5f);
-        newHaloColor = new Color(0f, green, blue, 1f);
+        if (potentialEnergy < 1 & kineticEnergy < 1) {
+            newSphereColor = new Color(1f,1f,1f,.5f);
+        }
+        else {
+            green = map(potentialEnergy, 0f, totalEnergy, 0f, 1f);
+            blue = map(kineticEnergy, 0f, totalEnergy, 0f, 1f);
+            // txt.text = totalEnergy.ToString();
+
+            newSphereColor = new Color(0f, green, blue, .5f);
+            newHaloColor = new Color(0f, green, blue, 1f);
+        }
 
         sphereRenderer.material.SetColor("_Color", newSphereColor);
         
         // transform.localScale = new Vector3 (1.0001f, 1.0001f, 1.0001f); //changes size of ball
 
+
         // to represent energy loss
-        float energyDelta = totalEnergy/originalEnergy;
+        float energyDelta = totalEnergy/originalEnergy; 
 
         // change halo properties:
         SerializedObject halo = new SerializedObject(GetComponent("Halo"));
-        halo.FindProperty("m_Size").floatValue = 2f*energyDelta;
+        halo.FindProperty("m_Size").floatValue = .5f + 2f*energyDelta; // when energy is ~0 we want size = .5 (no halo showing)
         halo.FindProperty("m_Enabled").boolValue = true;
         halo.FindProperty("m_Color").colorValue = newHaloColor;
         halo.ApplyModifiedProperties();
+
+        
+        
+        
     }
 }
