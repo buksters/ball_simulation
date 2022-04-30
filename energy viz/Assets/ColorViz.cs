@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class ColorViz : MonoBehaviour
 {
     public Text txt;
     Renderer sphereRenderer;
+    public Light halo;
     private Color newSphereColor;
     private Color newHaloColor;
     private float potentialEnergy, kineticEnergy;
@@ -26,7 +29,9 @@ public class ColorViz : MonoBehaviour
 
     void Start()
     {
+        halo = GetComponent<Light>();
         sphereRenderer = GetComponent<Renderer>();
+        halo.transform.position = sphereRenderer.transform.position;
         txt = GetComponent<UnityEngine.UI.Text>();
         mass =  GetComponent<Rigidbody>().mass;
         originalEnergy = -mass*Physics.gravity.y*transform.position.y;
@@ -34,7 +39,7 @@ public class ColorViz : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        halo.transform.position = sphereRenderer.transform.position;
         // float mass =  GetComponent<Rigidbody>().mass;
         Vector3 vel = GetComponent<Rigidbody>().velocity;
         float Height = transform.position.y;
@@ -62,13 +67,17 @@ public class ColorViz : MonoBehaviour
         // to represent energy loss
         float energyDelta = totalEnergy/originalEnergy; 
 
-        // change halo properties:
+        halo.color = newHaloColor;
+        halo.range = .5f + 2f*energyDelta;
+
+        /* --> only works in unity editor, error when building :((( solution: use point light!
+        // change halo properties: 
         SerializedObject halo = new SerializedObject(GetComponent("Halo"));
         halo.FindProperty("m_Size").floatValue = .5f + 2f*energyDelta; // when energy is ~0 we want size = .5 (no halo showing)
         halo.FindProperty("m_Enabled").boolValue = true;
         halo.FindProperty("m_Color").colorValue = newHaloColor;
         halo.ApplyModifiedProperties();
-
+        */
         
         
         
