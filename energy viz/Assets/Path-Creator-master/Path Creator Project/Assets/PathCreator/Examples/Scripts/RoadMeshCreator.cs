@@ -5,8 +5,8 @@ using UnityEngine;
 namespace PathCreation.Examples {
     public class RoadMeshCreator : PathSceneTool {
         [Header ("Road settings")]
-        public float roadWidth = .4f;
-        [Range (0, .5f)]
+        public float roadWidth = .8f;
+        [Range (0, 1f)]
         public float thickness = .15f;
         public bool flattenSurface;
 

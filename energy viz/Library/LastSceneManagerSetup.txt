@@ -1,6 +1,5 @@
 sceneSetups:
-- path: Assets/Path-Creator-master/Path Creator Project/Assets/PathCreator/Examples/Scenes/Generate
-    Path.unity
+- path: Assets/v2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

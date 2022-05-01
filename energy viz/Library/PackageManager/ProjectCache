@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637867656020000000
-    m_Hash: 4095827878
+      ticks: 637869483490000000
+    m_Hash: 1779207900
   m_LockFileStatus:
     m_FilePath: /Users/ibuki/Documents/GitHub/ball_simulation/energy viz/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637867656020000000
-    m_Hash: 1346920459
+      ticks: 637869483490000000
+    m_Hash: 3923335062
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -206,7 +206,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -1505,12 +1505,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 1.0.0-pre.6
-- packageId: com.unity.xr.management@4.2.0
+- packageId: com.unity.xr.management@4.2.1
   testable: 0
   isDirectDependency: 1
-  version: 4.2.0
+  version: 4.2.1
   source: 1
-  resolvedPath: /Users/ibuki/Documents/GitHub/ball_simulation/energy viz/Library/PackageCache/com.unity.xr.management@4.2.0
+  resolvedPath: /Users/ibuki/Documents/GitHub/ball_simulation/energy viz/Library/PackageCache/com.unity.xr.management@4.2.1
   assetPath: Packages/com.unity.xr.management
   name: com.unity.xr.management
   displayName: XR Plugin Management
@@ -1623,13 +1623,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637704350680000000
+  datePublishedTicks: 637769778170000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/xr.sdk.management.git
-    revision: c8fb6583d6d04516909a8d2ab999a1dbe90ade50
+    revision: 9c99228887ff65cc0729434b3b9371d22b707cb9
     path: 
   unityLifecycle:
     version: 4.2.0
@@ -4177,7 +4177,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -4372,7 +4372,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -4547,7 +4547,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -4704,7 +4704,7 @@ m_ResolvedPackages:
   - name: com.unity.subsystemregistration
     version: 1.1.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.xr.legacyinputhelpers
     version: 2.1.9
   - name: com.unity.xr.interactionsubsystems
@@ -4856,7 +4856,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -4936,7 +4936,7 @@ m_ResolvedPackages:
     version: 1.0.2
   resolvedDependencies:
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.subsystems
     version: 1.0.0
   - name: com.unity.modules.jsonserialize
@@ -5173,7 +5173,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.xr.management
-    version: 4.2.0
+    version: 4.2.1
   - name: com.unity.modules.vr
     version: 1.0.0
   - name: com.unity.modules.physics

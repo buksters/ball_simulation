@@ -8,13 +8,40 @@ namespace PathCreation.Examples {
 
         public bool closedLoop = true;
         public Transform[] waypoints;
+        BezierPath bezierPath;
 
         void Start () {
             if (waypoints.Length > 0) {
                 // Create a new bezier path from the waypoints.
-                BezierPath bezierPath = new BezierPath (waypoints, closedLoop, PathSpace.xyz);
-                GetComponent<PathCreator> ().bezierPath = bezierPath;
+                // bezierPath = new BezierPath(waypoints, closedLoop, PathSpace.xy);
+                // GetComponent<PathCreator>().bezierPath = bezierPath;
+
+                UpdatePath();
             }
+            
+        }
+
+        // void Update () {
+        //     bezierPath = new BezierPath(waypoints, closedLoop, PathSpace.xyz);
+        //     GetComponent<PathCreator>().bezierPath = bezierPath;
+
+        // }
+
+        // void OnMouseDrag() {
+        //     UpdatePath();
+        // }
+
+
+        void UpdatePath() {
+            BezierPath bezierPath = new BezierPath(waypoints, closedLoop, PathSpace.xy);
+            GetComponent<PathCreator>().bezierPath = bezierPath;
+
+            // if (waypoints.Length > 0) {
+            //     // Create a new bezier path from the waypoints.
+            //     BezierPath bezierPath = new BezierPath(waypoints, closedLoop, PathSpace.xy);
+            //     GetComponent<PathCreator>().bezierPath = bezierPath;
+            // }
+
         }
     }
 }

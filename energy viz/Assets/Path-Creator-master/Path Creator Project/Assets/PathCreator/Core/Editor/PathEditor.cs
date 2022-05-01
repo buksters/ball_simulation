@@ -188,8 +188,8 @@ namespace PathCreationEditor {
                 if (data.showNormals) {
                     bezierPath.FlipNormals = EditorGUILayout.Toggle (new GUIContent ("Flip Normals"), bezierPath.FlipNormals);
                     if (bezierPath.Space == PathSpace.xyz | bezierPath.Space == PathSpace.xy) {
-                        bezierPath.GlobalNormalsAngle = EditorGUILayout.Slider (new GUIContent ("Global Angle"), bezierPath.GlobalNormalsAngle, 0, 360);
-                        // bezierPath.GlobalNormalsAngle = 90;
+                        // bezierPath.GlobalNormalsAngle = EditorGUILayout.Slider (new GUIContent ("Global Angle"), bezierPath.GlobalNormalsAngle, 0, 360);
+                        bezierPath.GlobalNormalsAngle = 90;
 
                         if (GUILayout.Button ("Reset Normals")) {
                             Undo.RecordObject (creator, "Reset Normals");
