@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collidable
+  - PathPoints
+  - Cloned
   layers:
   - Default
   - TransparentFX

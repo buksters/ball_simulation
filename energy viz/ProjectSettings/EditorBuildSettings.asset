@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Path-Creator-master/Path Creator Project/Assets/PathCreator/Examples/Scenes/Generate
       Path.unity
     guid: 3145d476fb2c7f242875d23b77320de4
+  - enabled: 0
+    path: Assets/v2.unity
+    guid: 375bf27550fc543ddbc2132b4533e614
+  - enabled: 1
+    path: Assets/AR version.unity
+    guid: ccfa4bfde931f4df19be67b353c1c7ec
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

@@ -19,6 +19,7 @@ public class ColorViz : MonoBehaviour
     private float originalEnergy;
     private float mass;
     
+    
 
 
     //map(value, oldlow, oldhigh, newlow, newhigh)

@@ -23,6 +23,19 @@ namespace PathCreation.Examples {
         Mesh mesh;
         MeshCollider meshCollider;
 
+        // void Start() {
+        //     Invoke("PathUpdated", 0.1f);
+        // }
+        
+        void Update() {
+            if (pathCreator != null) {
+
+                AssignMeshComponents ();
+                AssignMaterials ();
+                CreateRoadMesh ();
+            }
+        }
+
         protected override void PathUpdated () {
             if (pathCreator != null) {
                 AssignMeshComponents ();
@@ -51,11 +64,15 @@ namespace PathCreation.Examples {
             int[] triangleMap = { 0, 8, 1, 1, 8, 9 };
             int[] sidesTriangleMap = { 4, 6, 14, 12, 4, 14, 5, 15, 7, 13, 15, 5 };
 
-            bool usePathNormals = !(path.space == PathSpace.xyz && flattenSurface);
+            // bool usePathNormals = !(path.space == PathSpace.xy && flattenSurface);
+            // bool usePathNormals = true;
 
             for (int i = 0; i < path.NumPoints; i++) {
-                Vector3 localUp = (usePathNormals) ? Vector3.Cross (path.GetTangent (i), path.GetNormal (i)) : path.up;
-                Vector3 localRight = (usePathNormals) ? path.GetNormal (i) : Vector3.Cross (localUp, path.GetTangent (i));
+                // Vector3 localUp = (usePathNormals) ? Vector3.Cross (path.GetTangent (i), path.GetNormal (i)) : path.up;
+                // Vector3 localRight = (usePathNormals) ? path.GetNormal (i) : Vector3.Cross (localUp, path.GetTangent (i));
+                Vector3 localRight = path.up;
+                Vector3 localUp = Vector3.Cross (localRight, path.GetTangent (i));
+                
                 Vector3 localDiagonalRight = localUp + localRight;
                 Vector3 localDiagonalLeft = localUp - localRight;
 
@@ -67,8 +84,8 @@ namespace PathCreation.Examples {
                 verts[vertIndex + 0] = vertSideA;
                 verts[vertIndex + 1] = vertSideB;
                 // Add bottom of road vertices
-                verts[vertIndex + 2] = vertSideA - localUp * thickness;
-                verts[vertIndex + 3] = vertSideB - localUp * thickness;
+                verts[vertIndex + 2] = vertSideA + localUp * thickness;
+                verts[vertIndex + 3] = vertSideB + localUp * thickness;
 
                 // Duplicate vertices to get flat shading for sides of road
                 verts[vertIndex + 4] = verts[vertIndex + 0];
@@ -128,7 +145,8 @@ namespace PathCreation.Examples {
             }
 
             meshHolder.transform.rotation = Quaternion.identity;
-            meshHolder.transform.position = Vector3.zero;
+            // meshHolder.transform.position = Vector3.zero;
+            meshHolder.transform.position = this.transform.position;
             meshHolder.transform.localScale = Vector3.one;
 
             // Ensure mesh renderer and filter components are assigned

@@ -76,8 +76,9 @@ namespace PathCreation {
 
             // Only draw path gizmo if the path object is not selected
             // (editor script is resposible for drawing when selected)
+
             GameObject selectedObj = UnityEditor.Selection.activeGameObject;
-            if (selectedObj != gameObject) {
+            // if (selectedObj != gameObject) {
 
                 if (path != null) {
                     path.UpdateTransform (transform);
@@ -103,7 +104,7 @@ namespace PathCreation {
                         }
                     }
                 }
-            }
+            // }
         }
 #endif
 

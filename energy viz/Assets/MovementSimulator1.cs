@@ -55,11 +55,11 @@ public class MovementSimulator1 : MonoBehaviour
         // }
     }
 
-    void FixedUpdate(){
+    // void FixedUpdate(){
 
-        if (mainPhysics)
-            SceneManager.GetActiveScene().GetPhysicsScene().Simulate(Time.fixedDeltaTime);
-    }
+    //     if (mainPhysics)
+    //         SceneManager.GetActiveScene().GetPhysicsScene().Simulate(Time.fixedDeltaTime);
+    // }
 
     void SimulatePhysics()
     {

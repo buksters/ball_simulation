@@ -106,6 +106,7 @@ namespace PathCreationEditor {
                 if (data.showPathOptions) {
                     // bezierPath.Space = (PathSpace) EditorGUILayout.Popup ("Space", (int) bezierPath.Space, spaceNames);
                     bezierPath.Space = PathSpace.xy;
+                    bezierPath.GlobalNormalsAngle = 90;
                     bezierPath.ControlPointMode = (BezierPath.ControlMode) EditorGUILayout.EnumPopup (new GUIContent ("Control Mode"), bezierPath.ControlPointMode);
                     if (bezierPath.ControlPointMode == BezierPath.ControlMode.Automatic) {
                         bezierPath.AutoControlLength = EditorGUILayout.Slider (new GUIContent ("Control Spacing"), bezierPath.AutoControlLength, 0, 1);
@@ -187,16 +188,17 @@ namespace PathCreationEditor {
                 data.showNormals = EditorGUILayout.Foldout (data.showNormals, new GUIContent ("Normals Options"), true, boldFoldoutStyle);
                 if (data.showNormals) {
                     bezierPath.FlipNormals = EditorGUILayout.Toggle (new GUIContent ("Flip Normals"), bezierPath.FlipNormals);
-                    if (bezierPath.Space == PathSpace.xyz | bezierPath.Space == PathSpace.xy) {
-                        // bezierPath.GlobalNormalsAngle = EditorGUILayout.Slider (new GUIContent ("Global Angle"), bezierPath.GlobalNormalsAngle, 0, 360);
-                        bezierPath.GlobalNormalsAngle = 90;
+                    bezierPath.GlobalNormalsAngle = 90;
+                    // if (bezierPath.Space == PathSpace.xy) {
+                    //     // bezierPath.GlobalNormalsAngle = EditorGUILayout.Slider (new GUIContent ("Global Angle"), bezierPath.GlobalNormalsAngle, 0, 360);
+                    //     bezierPath.GlobalNormalsAngle = 90;
 
-                        if (GUILayout.Button ("Reset Normals")) {
-                            Undo.RecordObject (creator, "Reset Normals");
-                            bezierPath.FlipNormals = false;
-                            bezierPath.ResetNormalAngles ();
-                        }
-                    }
+                    //     if (GUILayout.Button ("Reset Normals")) {
+                    //         Undo.RecordObject (creator, "Reset Normals");
+                    //         bezierPath.FlipNormals = false;
+                    //         bezierPath.ResetNormalAngles ();
+                    //     }
+                    // }
                     GUILayout.Space (inspectorSectionSpacing);
                 }
 
