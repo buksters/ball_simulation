@@ -38,7 +38,7 @@ public class ColorViz : MonoBehaviour
         originalEnergy = -mass*Physics.gravity.y*transform.position.y;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         halo.transform.position = sphereRenderer.transform.position;
         // float mass =  GetComponent<Rigidbody>().mass;

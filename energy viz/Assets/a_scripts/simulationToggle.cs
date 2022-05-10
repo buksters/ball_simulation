@@ -50,6 +50,7 @@ public class simulationToggle : MonoBehaviour
     {
         if (simulate.isOn) {
             Debug.Log("turned on");
+            simulate.GetComponentInChildren<Image>().color = new Color (1f,1f,1f,0.8f);
             lineRenderer.positionCount = 1000;
             CreateSceneParameters createSceneParameters = new CreateSceneParameters(LocalPhysicsMode.Physics3D);
             parallelScene = SceneManager.CreateScene("ParallelScene", createSceneParameters);
@@ -58,6 +59,7 @@ public class simulationToggle : MonoBehaviour
         }
         else {
             Debug.Log("turned off");
+            simulate.GetComponentInChildren<Image>().color = new Color (1f,1f,1f,1f);
             lineRenderer.positionCount = 0;
             // SceneManager.UnloadSceneAsync(parallelScene);
         }
